@@ -14,26 +14,21 @@
  * @param {string[]} strs
  * @return {string}
  */
+
 var longestCommonPrefix = function (strs) {
   const standard = strs[0];
   let standardArray = standard.split('');
   const standardLength = standardArray.length;
   const strsLength = strs.length - 1;
   let preIndex = -1;
-  let notCommon = false;
 
   for (let s = 0; s < standardLength; s++) {
     for (let i = 1; i <= strsLength; i++) {
       if (strs[i].indexOf(standardArray[s]) != 0) {
-        notCommon = true;
-        preIndex = preIndex - 1;
-        break;
+        return standard.substring(0, preIndex);
       }
       preIndex = s;
       strs[i] = strs[i].substring(1);
-    }
-    if (notCommon) {
-      break;
     }
   }
   return standard.substring(0, preIndex + 1);
