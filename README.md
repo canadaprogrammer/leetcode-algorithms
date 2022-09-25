@@ -11,3 +11,4 @@
 26.Remove Duplicates from Sorted Array
 27.Remove Element
 35.Search Insert Position
+58.Length of Last Word
